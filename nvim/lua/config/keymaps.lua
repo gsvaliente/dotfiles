@@ -22,6 +22,9 @@ map("n", "<Leader>vd", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to definition in vertical split" })
 
+-- clear highlight of searched word
+map("n", "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Clear search highlight" })
+
 -- Keep cursor centered when scrolling
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
