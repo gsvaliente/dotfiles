@@ -1,6 +1,7 @@
 return {
   "williamboman/mason.nvim",
-  lazy = true,
+  -- lazy = true,
+  event = { "BufReadPre", "BufNewFile" },
   cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUpdate" },
   build = ":MasonUpdate",
   dependencies = {
@@ -43,7 +44,7 @@ return {
         "cssls",
         "tailwindcss",
         -- "gopls",
-        "emmet_ls",
+        -- "emmet_ls",
         "emmet_language_server",
         -- "eslint",
         "marksman",
@@ -91,22 +92,22 @@ return {
         end,
 
         -- Custom handler for emmet_ls
-        ["emmet_ls"] = function()
-          lspconfig.emmet_ls.setup({
-            capabilities = capabilities,
-            filetypes = {
-              "html",
-              "typescriptreact",
-              "javascriptreact",
-              "css",
-              "sass",
-              "scss",
-              "less",
-              "svelte",
-              "astro",
-            },
-          })
-        end,
+        -- ["emmet_ls"] = function()
+        --   lspconfig.emmet_ls.setup({
+        --     capabilities = capabilities,
+        --     filetypes = {
+        --       "html",
+        --       "typescriptreact",
+        --       "javascriptreact",
+        --       "css",
+        --       "sass",
+        --       "scss",
+        --       "less",
+        --       "svelte",
+        --       "astro",
+        --     },
+        --   })
+        -- end,
 
         -- Custom handler for emmet_language_server
         ["emmet_language_server"] = function()
@@ -115,22 +116,22 @@ return {
               "css",
               "eruby",
               "html",
-              "javascript",
-              "javascriptreact",
+              -- "javascript",
+              -- "javascriptreact",
               "less",
               "sass",
               "scss",
               "pug",
-              "typescript",
-              "typescriptreact",
+              -- "typescript",
+              -- "typescriptreact",
             },
             init_options = {
               includeLanguages = {},
-              excludeLanguages = {},
+              excludeLanguages = { "javascript", "javascriptreact", "typescriptreact" },
               extensionsPath = {},
               preferences = {},
-              showAbbreviationSuggestions = true,
-              showExpandedAbbreviation = "always",
+              showAbbreviationSuggestions = false,
+              showExpandedAbbreviation = "never",
               showSuggestionsAsSnippets = false,
               syntaxProfiles = {},
               variables = {},
