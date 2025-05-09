@@ -228,18 +228,15 @@ return {
       -- autocompletion sources
       sources = cmp.config.sources({
         { name = "luasnip" },
+
         {
           name = "nvim_lsp",
-          entry_filter = function(entry, ctx)
-            local label = entry.completion_item.label or ""
-            local source = entry.source.name or ""
-            local client_name = entry.source.source.client and entry.source.source.client.name or ""
-
-            -- Filter only Emmet-style HTML tag entries from emmet_ls
-            if client_name == "emmet_ls" and label:match("^<.+>$") then
+          entry_filter = function(entry)
+            -- Completely skip suggestions from emmet_language_server
+            local client = entry.source.source.client
+            if client and client.name == "emmet_language_server" then
               return false
             end
-
             return true
           end,
         },
@@ -266,6 +263,7 @@ return {
 
       -- NOTE: ! Experimenting with Customized Mappings ! --
       mapping = cmp.mapping.preset.insert({
+        ["<C-Space>"] = cmp.mapping.complete(),
         ["<BS>"] = cmp.mapping(function(_fallback)
           smart_bs()
         end, { "i", "s" }),
