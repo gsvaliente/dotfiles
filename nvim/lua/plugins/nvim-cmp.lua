@@ -227,8 +227,6 @@ return {
       },
       -- autocompletion sources
       sources = cmp.config.sources({
-        { name = "luasnip" },
-
         {
           name = "nvim_lsp",
           entry_filter = function(entry)
@@ -240,6 +238,7 @@ return {
             return true
           end,
         },
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "tailwindcss-colorizer-cmp" },

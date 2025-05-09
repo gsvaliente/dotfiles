@@ -48,6 +48,7 @@ return {
         "emmet_language_server",
         -- "eslint",
         "marksman",
+        "vtsls",
       },
     })
 
@@ -171,6 +172,24 @@ return {
           lspconfig.denols.setup({
             capabilities = capabilities,
             root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+          })
+        end,
+
+        ["vtsls"] = function()
+          lspconfig.vtsls.setup({
+            capabilities = capabilities,
+            settings = {
+              typescript = {
+                inlayHints = {
+                  parameterNames = { enabled = "literals" },
+                  parameterTypes = { enabled = true },
+                  variableTypes = { enabled = true },
+                  propertyDeclarationTypes = { enabled = true },
+                  functionLikeReturnTypes = { enabled = true },
+                },
+              },
+              completeFunctionCalls = true,
+            },
           })
         end,
 
