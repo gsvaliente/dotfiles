@@ -9,14 +9,34 @@ return {
     config = function()
       require("nvim-treesitter.configs").setup({
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
-        ensure_installed = { 
-          "c", "lua", "vim", "vimdoc", "query",
+        ensure_installed = {
+          "c",
+          "lua",
+          "vim",
+          "vimdoc",
+          "query",
           -- Web development languages
-          "html", "css", "javascript", "typescript", "tsx",
-          "json", "yaml", "graphql", "vue", "svelte", "astro",
-          "php", "scss", "markdown", "regex", 
+          "html",
+          "css",
+          "javascript",
+          "typescript",
+          "tsx",
+          "json",
+          "yaml",
+          "graphql",
+          "vue",
+          "svelte",
+          "astro",
+          "php",
+          "scss",
+          "markdown",
+          "regex",
           -- Server-side languages commonly used in web dev
-          "python", "ruby", "go", "java", "prisma"
+          "python",
+          "ruby",
+          "go",
+          "java",
+          "prisma",
         },
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -44,8 +64,8 @@ return {
             -- node_incremental = "grn",
             -- scope_incremental = "grc",
             -- node_decremental = "grm",
-            init_selection = "<C-space>",
-            node_incremental = "<C-space>",
+            init_selection = "<C-CR>",
+            node_incremental = "<C-CR>",
             scope_incremental = false,
             node_decremental = "<Backspace>",
           },
@@ -58,12 +78,18 @@ return {
             lookahead = true,
             keymaps = {
               -- You can use the capture groups defined in textobjects.scm
-              ["af"] = { query = "@function.outer", desc = "Select outer part of a function region" }, 
-              ["if"] = { query = "@function.inner", desc = "Select inner part of a function region" },
-              ["ir"] = { query = "@return.inner", desc = "Select inner part of a return region"},
-              ["ar"] = { query = "@return.outer", desc = "Select outer part of a return region"},
-              ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop region"},
-              ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop region"},
+              ["af"] = {
+                query = "@function.outer",
+                desc = "Select outer part of a function region",
+              },
+              ["if"] = {
+                query = "@function.inner",
+                desc = "Select inner part of a function region",
+              },
+              ["ir"] = { query = "@return.inner", desc = "Select inner part of a return region" },
+              ["ar"] = { query = "@return.outer", desc = "Select outer part of a return region" },
+              ["il"] = { query = "@loop.inner", desc = "Select inner part of a loop region" },
+              ["al"] = { query = "@loop.outer", desc = "Select outer part of a loop region" },
               -- ["ac"] = "@class.outer",
               -- ["ic"] = "@class.inner",
             },
