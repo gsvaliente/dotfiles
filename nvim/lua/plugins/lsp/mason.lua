@@ -111,33 +111,60 @@ return {
 
         -- Custom handler for emmet_language_server
         ["emmet_language_server"] = function()
-          lspconfig.emmet_language_server.setup({
+          local capabilities = vim.lsp.protocol.make_client_capabilities()
+          capabilities.textDocument.completion.completionItem.snippetSupport = false
+
+          require("lspconfig").emmet_language_server.setup({
+            capabilities = capabilities,
             filetypes = {
               "css",
-              "eruby",
               "html",
-              -- "javascript",
-              -- "javascriptreact",
-              "less",
+              "javascriptreact",
               "sass",
               "scss",
-              "pug",
-              -- "typescript",
-              -- "typescriptreact",
+              "typescriptreact",
             },
             init_options = {
-              includeLanguages = {},
-              excludeLanguages = { "javascript", "javascriptreact", "typescriptreact" },
-              extensionsPath = {},
-              preferences = {},
+              preferences = {
+                ["bem.enabled"] = false,
+              },
               showAbbreviationSuggestions = false,
               showExpandedAbbreviation = "never",
               showSuggestionsAsSnippets = false,
-              syntaxProfiles = {},
-              variables = {},
+              syntaxProfiles = {
+                html = {
+                  selfClosingStyle = "xhtml",
+                },
+              },
             },
           })
-        end,
+        end, -- ["emmet_language_server"] = function()
+        --   lspconfig.emmet_language_server.setup({
+        --     filetypes = {
+        --       "css",
+        --       "html",
+        --       "javascriptreact",
+        --       "sass",
+        --       "scss",
+        --       "typescriptreact",
+        --     },
+        --     init_options = {
+        --       includeLanguages = {},
+        --       excludeLanguages = {},
+        --       extensionsPath = {},
+        --       preferences = {
+        --         ["bem.enabled"] = false,
+        --       },
+        --       showAbbreviationSuggestions = false,
+        --       showExpandedAbbreviation = "never",
+        --       showSuggestionsAsSnippets = false,
+        --       syntaxProfiles = {
+        --         html = { selfClosingStyle = "xhtml" },
+        --       },
+        --       variables = {},
+        --     },
+        --   })
+        -- end,
 
         -- Custom handler for denols
         ["denols"] = function()
