@@ -4,7 +4,7 @@ return {
     name = "rose-pine",
     opts = {
       variant = "moon",
-      dark_variant = "main",
+      dark_variant = "moon",
       styles = {
         bold = true,
         italic = true,
