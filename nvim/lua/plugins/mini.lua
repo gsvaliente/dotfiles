@@ -1,11 +1,11 @@
 return {
   -- HACK: Statusline
-  {'echasnovski/mini.statusline',  version = false , opts = {} },
+  { "echasnovski/mini.statusline", version = false, opts = {} },
   -- HACK: Git stuff
-  { 'echasnovski/mini-git', version = false, main = 'mini.git' },
+  { "echasnovski/mini-git", version = false, main = "mini.git" },
   -- HACK: Ensure comments work properly
   {
-    'echasnovski/mini.comment',
+    "echasnovski/mini.comment",
     event = { "BufReadPre", "BufNewFile" },
     version = false,
     dependencies = {
@@ -13,21 +13,21 @@ return {
     },
     config = function()
       -- disable the autocommand from ts-context-commentstring
-      require('ts_context_commentstring').setup {
+      require("ts_context_commentstring").setup({
         enable_autocmd = false,
-      }
+      })
 
-      require("mini.comment").setup {
+      require("mini.comment").setup({
         -- tsx, jsx, html , svelte comment support
         options = {
           custom_commentstring = function()
-            return require('ts_context_commentstring.internal').calculate_commentstring({ key =
-              'commentstring' })
-              or vim.bo.commentstring
+            return require("ts_context_commentstring.internal").calculate_commentstring({
+              key = "commentstring",
+            }) or vim.bo.commentstring
           end,
         },
-      }
-    end
+      })
+    end,
   },
   -- HACK: Surround text objects
   {
@@ -46,16 +46,16 @@ return {
       -- saiw surround with no whitespace
       -- saw surround with whitespace
       mappings = {
-        add = 'sa',            -- Add surrounding in Normal and Visual modes
-        delete = 'ds',         -- Delete surrounding
-        find = 'sf',           -- Find surrounding (to the right)
-        find_left = 'sF',      -- Find surrounding (to the left)
-        highlight = 'sh',      -- Highlight surrounding
-        replace = 'sr',        -- Replace surrounding
-        update_n_lines = 'sn', -- Update `n_lines`
+        add = "gsa", -- Add surrounding in Normal and Visual modes
+        delete = "gsd", -- Delete surrounding
+        find = "gsf", -- Find surrounding (to the right)
+        find_left = "gsF", -- Find surrounding (to the left)
+        highlight = "gsh", -- Highlight surrounding
+        replace = "gsr", -- Replace surrounding
+        update_n_lines = "gsn", -- Update `n_lines`
 
-        suffix_last = 'l',     -- Suffix to search with "prev" method
-        suffix_next = 'n',     -- Suffix to search with "next" method
+        suffix_last = "l", -- Suffix to search with "prev" method
+        suffix_next = "n", -- Suffix to search with "next" method
       },
 
       -- Number of lines within which surrounding is searched
@@ -70,7 +70,7 @@ return {
       -- neighborhood). One of 'cover', 'cover_or_next', 'cover_or_prev',
       -- 'cover_or_nearest', 'next', 'prev', 'nearest'. For more details,
       -- see `:h MiniSurround.config`.
-      search_method = 'cover',
+      search_method = "cover",
 
       -- Whether to disable showing non-error feedback
       silent = false,
@@ -86,7 +86,9 @@ return {
       miniTrailspace.setup({
         only_in_normal_buffers = true,
       })
-      vim.keymap.set("n", "<leader>cw", function() miniTrailspace.trim() end, { desc = "Erase Whitespace" })
+      vim.keymap.set("n", "<leader>cw", function()
+        miniTrailspace.trim()
+      end, { desc = "Erase Whitespace" })
 
       -- Ensure highlight never reappears by removing it on CursorMoved
       vim.api.nvim_create_autocmd("CursorMoved", {
@@ -103,9 +105,13 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
       local miniSplitJoin = require("mini.splitjoin")
-      miniSplitJoin.setup({mappings = { toggle = "" },}) -- Disable default mapping})
-      vim.keymap.set({"n", "x"}, "sj", function() miniSplitJoin.join() end, {desc = "Join arguments"})
-      vim.keymap.set({"n", "x"}, "sk", function() miniSplitJoin.split() end, { desc = "Split arguments" })
+      miniSplitJoin.setup({ mappings = { toggle = "" } }) -- Disable default mapping})
+      vim.keymap.set({ "n", "x" }, "<leader>js", function()
+        miniSplitJoin.join()
+      end, { desc = "Join arguments" })
+      vim.keymap.set({ "n", "x" }, "<leader>jx", function()
+        miniSplitJoin.split()
+      end, { desc = "Split arguments" })
     end,
   },
 }
