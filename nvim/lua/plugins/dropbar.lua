@@ -1,0 +1,25 @@
+return {
+  "Bekaboo/dropbar.nvim",
+  event = "VeryLazy",
+  opts = {
+    bar = {
+      sources = function(buf, _)
+        local sources = require("dropbar.sources")
+        return {
+          sources.path,
+        }
+      end,
+    },
+    sources = {
+      path = {
+        modified = function(sym)
+          -- Only show the filename
+          local filename = vim.fn.fnamemodify(sym.name, ":t")
+          return sym:merge({
+            name = filename,
+          })
+        end,
+      },
+    },
+  },
+}

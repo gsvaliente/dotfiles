@@ -19,6 +19,10 @@ return {
       -- HACK: read picker docs @ https://github.com/folke/snacks.nvim/blob/main/docs/picker.md
       picker = {
         enabled = true,
+        exclude = {
+          ".git",
+          "node_modules",
+        },
         matchers = {
           frecency = true,
           cwd_bonus = false,
@@ -30,10 +34,15 @@ return {
             icon_width = 2,
           },
         },
+        sources = {
+          buffers = {
+            layout = "select",
+          },
+        },
       },
       quickfile = { enabled = true },
       scope = { enabled = true },
-      scroll = { enabled = true },
+      scroll = { enabled = false },
       statuscolumn = { enabled = true },
       words = { enabled = true },
       styles = {
@@ -361,9 +370,7 @@ return {
             .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
             :map("<leader>uc")
           Snacks.toggle.treesitter():map("<leader>uT")
-          Snacks.toggle
-            .option("background", { off = "light", on = "dark", name = "Dark Background" })
-            :map("<leader>ub")
+          Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
           Snacks.toggle.inlay_hints():map("<leader>uh")
           Snacks.toggle.indent():map("<leader>ug")
           Snacks.toggle.dim():map("<leader>uD")

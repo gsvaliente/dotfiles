@@ -1,5 +1,5 @@
 return {
-  'stevearc/oil.nvim',
+  "stevearc/oil.nvim",
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {},
@@ -8,15 +8,15 @@ return {
   config = function()
     require("oil").setup({
       default_file_explorer = true, -- start up nvim with oil instead of netrw
-      columns = { },
+      columns = {},
       keymaps = {
         ["<C-h>"] = false,
         ["<C-c>"] = false, -- prevent from closing Oil as <C-c> is esc key
         -- ["<C-v>"] = "actions.select_split",
         ["<C-v>"] = {
           callback = function()
-            local oil = require 'oil'
-            oil.open_preview {vertical = true, split = 'botright'}
+            local oil = require("oil")
+            oil.open_preview({ vertical = true, split = "botright" })
           end,
         },
         ["q"] = "actions.close",

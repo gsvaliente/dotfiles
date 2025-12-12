@@ -1,6 +1,4 @@
-# NVIM SETUP
+# 💤 LazyVim
 
-## Heavily Inspired by
-just checking something
-
-- [This repo](https://github.com/Sin-cy/dotfiles/tree/main/nvim/.config/nvim)
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
