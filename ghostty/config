@@ -8,7 +8,7 @@ background-blur-radius = 50
 # font-family = DankMono Nerd Font Mono
 font-family = Ioskeley Mono
 
-font-style = Medium
+# font-style = Medium
 
 # theme = "dark: kanso-ink, light: kanso-pearl"
 # theme = GruvboxDark 
@@ -16,7 +16,9 @@ font-style = Medium
 # theme = Catppuccin Frappe
 theme = TokyoNight Moon
 
-font-size = 15.2
+macos-icon = xray
+
+font-size = 15.5
 # font-size = 17.5
 
 adjust-cell-height = 33%
