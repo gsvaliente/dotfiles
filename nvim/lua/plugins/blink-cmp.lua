@@ -4,6 +4,7 @@ return {
     "saghen/blink.cmp",
     dependencies = {
       "rafamadriz/friendly-snippets",
+      { "windwp/nvim-autopairs", event = "InsertEnter", opts = {} },
     },
     -- event = "InsertEnter",
     version = "*",
@@ -13,7 +14,9 @@ return {
       -- vim.cmd('highlight FloatBorder guibg=none')
       -- vim.cmd('highlight NormalFloat guibg=none')
 
-      require("blink.cmp").setup({
+      local cmp = require("blink.cmp")
+
+      cmp.setup({
         snippets = { preset = "luasnip" },
         signature = { enabled = true },
         appearance = {
@@ -89,6 +92,16 @@ return {
         },
       })
 
+      -- Integrate autopairs with blink.cmp
+      local autopairs = require("nvim-autopairs")
+
+      -- Hook into blink.cmp's accept event
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "BlinkCmpMenuAccept",
+        callback = function()
+          autopairs.completion_confirm()
+        end,
+      })
       require("luasnip.loaders.from_vscode").lazy_load()
     end,
   },
