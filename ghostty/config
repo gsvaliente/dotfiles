@@ -8,7 +8,7 @@ background-blur-radius = 50
 # font-family = DankMono Nerd Font Mono
 font-family = Ioskeley Mono
 
-# font-style = Medium
+font-style = Medium
 
 # theme = "dark: kanso-ink, light: kanso-pearl"
 # theme = GruvboxDark 
