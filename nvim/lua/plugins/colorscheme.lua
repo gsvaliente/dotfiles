@@ -5,7 +5,7 @@ return {
     style = "storm",
     transparent = false,
     styles = {
-      keywords = { bold = true },
+      -- keywords = { bold = true },
     },
     dim_inactive = true,
   },

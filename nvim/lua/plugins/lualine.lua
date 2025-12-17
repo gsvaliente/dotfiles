@@ -99,7 +99,7 @@ return {
         },
         lualine_z = {
           {
-            require("opencode").statusline,
+            -- require("opencode").statusline,
           },
         },
       },

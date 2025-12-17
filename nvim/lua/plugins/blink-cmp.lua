@@ -46,8 +46,8 @@ return {
           ["<C-e>"] = { "hide", "fallback" },
           ["<CR>"] = { "accept", "fallback" },
 
-          -- ["<Tab>"] = { "snippet_forward", "fallback" },
-          -- ["<S-Tab>"] = { "snippet_backward", "fallback" },
+          ["<C-l>"] = { "snippet_forward", "fallback" },
+          ["<C-h>"] = { "snippet_backward", "fallback" },
 
           ["<S-Tab>"] = { "select_prev", "fallback" },
           ["<Tab>"] = { "select_next", "fallback" },
