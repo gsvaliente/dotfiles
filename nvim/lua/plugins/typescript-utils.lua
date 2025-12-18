@@ -16,6 +16,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
+    event = "VeryLazy",
     ft = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "astro" },
     config = function()
       -- Independent nvim-ts-autotag setup
@@ -40,6 +41,7 @@ return {
   },
   {
     "pmizio/typescript-tools.nvim",
+    event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
       settings = {
