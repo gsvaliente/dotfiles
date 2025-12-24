@@ -2,7 +2,7 @@ return {
   {
     "dmmulroy/ts-error-translator.nvim",
     enabled = true,
-    event = "VeryLazy",
+    event = "BufEnter",
     config = function()
       require("ts-error-translator").setup({
         auto_attach = true,
@@ -16,7 +16,7 @@ return {
   },
   {
     "windwp/nvim-ts-autotag",
-    event = "VeryLazy",
+    event = "BufEnter",
     ft = { "html", "xml", "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "astro" },
     config = function()
       -- Independent nvim-ts-autotag setup
@@ -41,6 +41,7 @@ return {
   },
   {
     "pmizio/typescript-tools.nvim",
+    enabled = false,
     event = "VeryLazy",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {

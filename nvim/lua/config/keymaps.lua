@@ -8,11 +8,6 @@ local map = vim.keymap.set
 
 vim.g.mapleader = " "
 
-map("n", "<Leader>vd", function()
-  vim.cmd("vsplit")
-  vim.lsp.buf.definition()
-end, { desc = "Go to definition in vertical split" })
-
 -- clear highlight of searched word
 map("n", "<Esc>", "<cmd>noh<CR><Esc>", { desc = "Clear search highlight" })
 
@@ -71,6 +66,31 @@ map("n", "<C-a>", "ggVG", opts)
 
 -- Close Current Split
 map("n", "<Leader>sx", "<cmd>close<CR>", { desc = "Close Current Split" })
+
+-- To remove the floats when moving to diagnostics while using "tiny-errors.lua"
+local diagnostic_goto = function(next, severity)
+  return function()
+    vim.diagnostic.jump({
+      count = (next and 1 or -1) * vim.v.count1,
+      severity = severity and vim.diagnostic.severity[severity] or nil,
+      float = false, -- Changed to false
+    })
+  end
+end
+
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
+map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
+map("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
+
+-- Open defintion in vertical split
+map("n", "<Leader>vd", function()
+  vim.cmd("vsplit")
+  vim.lsp.buf.definition()
+end, { desc = "Go to definition in vertical split" })
 
 -- PLUGINS
 -- OIL

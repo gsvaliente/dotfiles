@@ -1,47 +1,70 @@
 return {
-  -- "NickvanDyke/opencode.nvim",
-  -- dependencies = {
-  --   -- Recommended for `ask()` and `select()`.
-  --   -- Required for `snacks` provider.
-  --   ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
-  --   { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+  "NickvanDyke/opencode.nvim",
+  dependencies = {
+    {
+      "folke/snacks.nvim",
+      opts = {
+        input = {},
+        picker = {},
+        terminal = {},
+      },
+    },
+  },
+  -- Add lazy-loading trigger
+  -- keys = {
+  --   { "<leader>oc", mode = { "n", "x" } },
+  --   { "<C-x>", mode = { "n", "x" } },
+  --   { "go", mode = { "n", "x" } },
+  --   { "goo", mode = "n" },
+  --   { "<C-.>", mode = { "n", "t" } },
   -- },
-  -- config = function()
-  --   ---@type opencode.Opts
-  --   vim.g.opencode_opts = {
-  --     -- Your configuration, if any — see `lua/opencode/config.lua`, or "goto definition".
-  --   }
-  --
-  --   -- Required for `opts.events.reload`.
-  --   vim.o.autoread = true
-  --
-  --   -- Recommended/example keymaps.
-  --   vim.keymap.set({ "n", "x" }, "<C-a>", function()
-  --     require("opencode").ask("@this: ", { submit = true })
-  --   end, { desc = "Ask opencode" })
-  --   vim.keymap.set({ "n", "x" }, "<C-x>", function()
-  --     require("opencode").select()
-  --   end, { desc = "Execute opencode action…" })
-  --   vim.keymap.set({ "n", "t" }, "<C-.>", function()
-  --     require("opencode").toggle()
-  --   end, { desc = "Toggle opencode" })
-  --
-  --   vim.keymap.set({ "n", "x" }, "go", function()
-  --     return require("opencode").operator("@this ")
-  --   end, { expr = true, desc = "Add range to opencode" })
-  --   vim.keymap.set("n", "goo", function()
-  --     return require("opencode").operator("@this ") .. "_"
-  --   end, { expr = true, desc = "Add line to opencode" })
-  --
-  --   vim.keymap.set("n", "<S-C-u>", function()
-  --     require("opencode").command("session.half.page.up")
-  --   end, { desc = "opencode half page up" })
-  --   vim.keymap.set("n", "<S-C-d>", function()
-  --     require("opencode").command("session.half.page.down")
-  --   end, { desc = "opencode half page down" })
-  --
-  --   -- You may want these if you stick with the opinionated "<C-a>" and "<C-x>" above — otherwise consider "<leader>o".
-  --   vim.keymap.set("n", "+", "<C-a>", { desc = "Increment", noremap = true })
-  --   vim.keymap.set("n", "-", "<C-x>", { desc = "Decrement", noremap = true })
-  -- end,
+  config = function()
+    ---@type opencode.Opts
+    vim.g.opencode_opts = {
+      prompts = {
+        code_reviewer = { prompt = "Review @buffer @code-reviewer", submit = true },
+      },
+    }
+
+    vim.opt.autoread = true
+
+    -- Keymaps with safety check
+    local opencode_ok, opencode = pcall(require, "opencode")
+    if not opencode_ok then
+      vim.notify("opencode.nvim failed to load", vim.log.levels.ERROR)
+      return
+    end
+
+    vim.keymap.set({ "n", "x" }, "<leader>of", function()
+      return opencode.operator("@this ")
+    end, { expr = true, desc = "Add object to opencode" })
+
+    vim.keymap.set("n", "<leader>oi", function()
+      return opencode.operator("@this ") .. "_"
+    end, { expr = true, desc = "Add line to opencode" })
+
+    vim.keymap.set({ "n", "x" }, "<leader>oa", function()
+      opencode.ask(nil, { submit = true })
+    end, { desc = "Ask opencode" })
+
+    vim.keymap.set({ "n", "x" }, "<leader>ox", function()
+      opencode.select()
+    end, { desc = "Execute opencode action…" })
+
+    vim.keymap.set({ "n", "t" }, "<leader>oo", function()
+      opencode.toggle()
+    end, { desc = "Toggle opencode" })
+
+    vim.keymap.set("n", "<S-C-u>", function()
+      opencode.command("session.half.page.up")
+    end, { desc = "opencode half page up" })
+
+    vim.keymap.set("n", "<S-C-d>", function()
+      opencode.command("session.half.page.down")
+    end, { desc = "opencode half page down" })
+
+    vim.keymap.set("n", "<leader>os", function()
+      opencode.single("Explain @this")
+    end, { desc = "Single" })
+  end,
 }
