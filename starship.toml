@@ -150,6 +150,10 @@ format =  '  on [$symbol$branch]($style)[](black)'
 [git_status]
 format = ' [($all_status$ahead_behind )]($style)'
 
+[bun]
+symbol = "🍙"
+format = '[ $symbol( $version) ]($style)'
+
 [nodejs]
 symbol = ""
 format = '[ $symbol( $version) ]($style)'
