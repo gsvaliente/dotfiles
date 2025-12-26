@@ -23,3 +23,13 @@ api.nvim_create_autocmd(
   { "InsertEnter", "WinLeave" },
   { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
+
+local function setup_lazygit_terminal()
+  vim.cmd("setlocal timeoutlen=0")
+end
+
+-- Hook this to TermOpen for lazygit
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*lazygit*",
+  callback = setup_lazygit_terminal,
+})

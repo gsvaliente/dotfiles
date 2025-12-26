@@ -88,7 +88,7 @@ return {
           ["@type.tsx"] = { fg = colors.pink },
           ["@type.jsx"] = { fg = colors.pink },
           ["@tag.delimiter"] = { fg = colors.teal },
-          ["@tag.attribute"] = { fg = colors.yellow },
+          ["@tag.attribute"] = { fg = colors.yellow, style = {} },
 
           -- Rainbow delimiters
           RainbowDelimiterRed = { fg = colors.red },
