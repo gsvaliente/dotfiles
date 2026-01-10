@@ -4,13 +4,13 @@ background-blur-radius = 50
 
 # font-family = Liga SFMono Nerd Font
 # font-family = JetBrains Mono
-# font-family = Cascadia Code
+font-family = Cascadia Code
 # font-family = DankMono Nerd Font Mono
-font-family = Ioskeley Mono
+# font-family = Ioskeley Mono
 
-font-style = Medium
-font-family-italic = Ioskeley Mono Medium
-# font-style = Regular
+# font-style = Medium
+# font-family-italic = Ioskeley Mono Medium
+font-style = Regular
 
 # theme = "dark: kanso-ink, light: kanso-pearl"
 # theme = GruvboxDark 

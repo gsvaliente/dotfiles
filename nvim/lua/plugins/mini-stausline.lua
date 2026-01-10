@@ -1,1 +1,2 @@
-return { "nvim-mini/mini.statusline", version = false, opts = {} }
+return {}
+-- return { "nvim-mini/mini.statusline", version = false, opts = {} }
