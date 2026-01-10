@@ -14,9 +14,10 @@ font-style = Regular
 
 # theme = "dark: kanso-ink, light: kanso-pearl"
 # theme = GruvboxDark 
-# theme = yukinord
 # theme = Catppuccin Frappe
-theme = TokyoNight Moon
+# theme = TokyoNight Moon
+# theme = Rose Pine Moon
+theme = Rose Pine
 
 macos-icon = xray
 

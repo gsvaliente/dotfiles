@@ -242,12 +242,12 @@ disabled = true
 
 [character]
 disabled = false
-# success_symbol = '[𝘹](bold fg:green)'
-error_symbol = '[𝘹](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+success_symbol = '[❯](bold fg:foam)'
+error_symbol = '[❯](bold fg:rose)'
+vimcmd_symbol = '[](bold fg:iris)'
+vimcmd_replace_one_symbol = '[](bold fg:iris)'
+vimcmd_replace_symbol = '[](bold fg:iris)'
+vimcmd_visual_symbol = '[](bold fg:iris)'
 # [aws]
 # symbol = "  "
 #
