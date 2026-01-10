@@ -42,7 +42,9 @@ return {
   {
     "pmizio/typescript-tools.nvim",
     enabled = true,
-    event = "VeryLazy",
+    -- event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
+    ft = { "javascript", "typescript", "javascriptreact", "typescriptreact", "svelte", "astro" },
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {
       settings = {
