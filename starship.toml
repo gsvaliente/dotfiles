@@ -117,8 +117,8 @@ RedHatEnterprise = "󱄛"
 [directory]
 style = "bold pine"
 format = "[ $path ]($style)"
-#truncation_length = 4
-#truncation_symbol = "…/"
+truncation_length = 4
+truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -154,32 +154,31 @@ format = "at $output"
 
 [git_branch]
 symbol = "[](overlay) "
-# format =  ' [$symbol$branch(:$remote_branch)]($style)[]'
 style = "fg:foam bg:overlay"
-format =  '  on [$symbol$branch]($style)[](overlay)'
+format =  '  on [$symbol$branch]($style)[ ](overlay)'
+
 
 [git_status]
-# format = ' [($all_status$ahead_behind )]($style)'
 disabled = false
 style = "bg:overlay fg:love"
-format = '[ ](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
-up_to_date = '[✓](bg:overlay fg:iris)'
-# untracked = '[?\($count\)](bg:overlay fg:gold)'
-untracked = '[?](bg:overlay fg:gold)'
-# stashed = '[\$](bg:overlay fg:iris)'
-# modified = '[!\($count\)](bg:overlay fg:gold)'
-modified = '[!](bg:overlay fg:gold)'
-# renamed = '[»\($count\)](bg:overlay fg:iris)'
-renamed = '[»](bg:overlay fg:iris)'
-# deleted = '[✘\($count\)](style)'
-deleted = '[✘](style)'
-# staged = '[++\($count\)](bg:overlay fg:gold)'
-staged = '[++](bg:overlay fg:gold)'
-# ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
-ahead = '[⇡](bg:overlay fg:foam)'
-diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
-# behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
-behind = '[⇣](bg:overlay fg:rose)'
+format = '([](fg:overlay)([$all_status$ahead_behind](bold $style))[](fg:overlay) )'
+# up_to_date = '[✔︎](bold fg:iris)'
+
+# Working directory status
+# untracked = '[❓](bg:overlay fg:gold)'      # New files to add
+# modified = '[📝](bg:overlay fg:gold)'       # Modified files
+# staged = '[✅](bg:overlay fg:foam)'         # Ready to commit
+# deleted = '[🗑️](bg:overlay fg:rose)'        # Deleted files
+# renamed = '[📛](bg:overlay fg:iris)'        # Renamed files
+# stashed = '[📦](bg:overlay fg:iris)'        # Stashed changes
+#
+# # Remote sync status
+# ahead = '[⬆️](bg:overlay fg:foam)'          # Commits to push
+# behind = '[⬇️](bg:overlay fg:rose)'         # Commits to pull
+# diverged = '[⚠️](bg:overlay fg:gold)[⬆️${ahead_count}](bg:overlay fg:foam)[⬇️${behind_count}](bg:overlay fg:rose)'
+
+# Hide when no remote
+# ignore_submodules = false
 
 [bun]
 symbol = "🍙"
@@ -243,7 +242,7 @@ disabled = true
 [character]
 disabled = false
 success_symbol = '[❯](bold fg:foam)'
-error_symbol = '[❯](bold fg:rose)'
+error_symbol = '[❯](bold fg:love)'
 vimcmd_symbol = '[](bold fg:iris)'
 vimcmd_replace_one_symbol = '[](bold fg:iris)'
 vimcmd_replace_symbol = '[](bold fg:iris)'
