@@ -30,6 +30,15 @@ end
 
 -- Hook this to TermOpen for lazygit
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*lazygit*",
+  pattern = { "*lazygit*", "*opencode*" },
   callback = setup_lazygit_terminal,
+})
+
+-- This hook ensures that tiny_inline_diagnostics doesnt duplicate
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+  end,
 })

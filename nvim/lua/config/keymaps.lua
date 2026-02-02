@@ -67,6 +67,21 @@ map("n", "<C-a>", "ggVG", opts)
 -- Close Current Split
 map("n", "<Leader>sx", "<cmd>close<CR>", { desc = "Close Current Split" })
 
+-- Open CodeDiff
+map("n", "<Leader>do", "<cmd>CodeDiff<CR>", { desc = "Open CodeDiff" })
+
+-- Close CodeDiff and clean the bufferline empty buffer
+map("n", "<leader>dq", function()
+  vim.cmd("CodeDiff close")
+  vim.cmd("diffoff!")
+  -- Wipe out any remaining buffers that have no name and are empty
+  for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.fn.bufname(bufnr) == "" and vim.api.nvim_buf_get_option(bufnr, "buftype") == "" then
+      vim.cmd("bwipeout " .. bufnr)
+    end
+  end
+end, { desc = "Close Diff and Wipe [No Name] Buffers" })
+
 -- To remove the floats when moving to diagnostics while using "tiny-errors.lua"
 local diagnostic_goto = function(next, severity)
   return function()

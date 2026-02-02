@@ -50,6 +50,7 @@ return {
       settings = {
         -- Expose all available TypeScript server commands
         expose_as_code_action = "all",
+        complete_function_calls = false,
         -- Configure tsserver settings
         tsserver_file_preferences = {
           includeInlayParameterNameHints = "none",

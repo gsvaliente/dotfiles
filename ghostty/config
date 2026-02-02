@@ -4,9 +4,10 @@ background-blur-radius = 50
 
 # font-family = Liga SFMono Nerd Font
 # font-family = JetBrains Mono
+font-family = Ioskeley Mono
 font-family = Cascadia Code
 # font-family = DankMono Nerd Font Mono
-# font-family = Ioskeley Mono
+# font-family = IoskeleyMono Nerd Font
 
 # font-style = Medium
 # font-family-italic = Ioskeley Mono Medium
@@ -29,6 +30,7 @@ adjust-cell-height = 20%
 cursor-style = block
 cursor-style-blink = false
 cursor-invert-fg-bg = false
+shell-integration-features = no-cursor
 
 macos-titlebar-style = tabs
 macos-option-as-alt = true

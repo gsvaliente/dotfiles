@@ -67,6 +67,8 @@ return {
           },
         },
         completion = {
+          -- This removes the auto closing parenthesis when accpetion a function
+          accept = { auto_brackets = { enabled = false } },
           menu = {
             border = nil,
             scrolloff = 1,
