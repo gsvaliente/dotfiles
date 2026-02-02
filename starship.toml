@@ -118,7 +118,8 @@ RedHatEnterprise = "󱄛"
 style = "bold pine"
 format = "[ $path ]($style)"
 truncation_length = 4
-truncation_symbol = "…/"
+# truncation_symbol = "…/"
+truncation_symbol = "../"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -173,9 +174,9 @@ format = '([](fg:overlay)([$all_status$ahead_behind](bold $style))[](fg:ov
 # stashed = '[📦](bg:overlay fg:iris)'        # Stashed changes
 #
 # # Remote sync status
-# ahead = '[⬆️](bg:overlay fg:foam)'          # Commits to push
-# behind = '[⬇️](bg:overlay fg:rose)'         # Commits to pull
-# diverged = '[⚠️](bg:overlay fg:gold)[⬆️${ahead_count}](bg:overlay fg:foam)[⬇️${behind_count}](bg:overlay fg:rose)'
+ahead = '[▲ ](bg:overlay fg:red)'          # Commits to push
+behind = '[▼ ](bg:overlay fg:red)'         # Commits to pull
+diverged = '[⇅ ](bg:overlay fg:gold)[⬆️${ahead_count}](bg:overlay fg:foam)[⬇️${behind_count}](bg:overlay fg:rose)'
 
 # Hide when no remote
 # ignore_submodules = false
