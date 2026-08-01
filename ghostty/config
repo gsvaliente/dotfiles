@@ -2,11 +2,9 @@
 background-opacity = 0.95
 background-blur-radius = 50
 
-# font-family = Ioskeley Mono
-font-family = Departure Mono
-# font-family = Geist Mono
 # font-family = Cascadia Code
 # font-family = IoskeleyMono Nerd Font
+font-family = IoskeleyMonoTerm Nerd Font
 
 # font-style = Medium
 # font-family-italic = Ioskeley Mono Medium
@@ -15,6 +13,7 @@ font-style = Regular
 # theme = "dark: kanso-ink, light: kanso-pearl"
 # theme = GruvboxDark
 # theme = Catppuccin Frappe
+ # theme = Catppuccin Latte
 theme = Rose Pine
 
 macos-icon = xray

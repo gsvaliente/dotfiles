@@ -1,0 +1,140 @@
+2026-07-27T21:03:31.329854Z  INFO herdr::platform::macos: raised server file descriptor soft limit previous=256 target=8192
+2026-07-27T21:03:31.331424Z  INFO herdr::api::server: api server listening path=/Users/gabrielvaliente/.config/herdr/herdr.sock
+2026-07-27T21:03:31.334592Z  INFO herdr::app: using pane scrollback configuration pane_scrollback_limit_bytes=10000000
+2026-07-27T21:03:31.359577Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T21:03:31.366045Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=1 rows=24 cols=80 scrollback_limit_bytes=10000000
+2026-07-27T21:03:31.370811Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=1 pid=30411
+2026-07-27T21:03:31.371296Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w1" pane_id=1
+2026-07-27T21:03:31.371309Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-27T21:03:31.371487Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:03:31.371700Z  INFO herdr::server::headless: created startup workspace cwd=/Users/gabrielvaliente
+2026-07-27T21:03:31.371895Z  INFO herdr::server::headless: client protocol socket listening path=/Users/gabrielvaliente/.config/herdr/herdr-client.sock
+2026-07-27T21:03:31.371932Z  INFO herdr::server::headless: herdr server started api_socket=/Users/gabrielvaliente/.config/herdr/herdr.sock client_socket=/Users/gabrielvaliente/.config/herdr/herdr-client.sock
+2026-07-27T21:03:31.372962Z  INFO herdr::logging: herdr starting event="app.startup" subsystem="server" outcome="started" pid=30370
+2026-07-27T21:03:31.376745Z  INFO herdr::server::headless: client connected client_id=2 cols=180 rows=36 cell_width_px=0 cell_height_px=0 render_encoding=SemanticFrame
+2026-07-27T21:03:36.381483Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:04:01.207021Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(30930)
+2026-07-27T21:05:52.143731Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:05:57.147605Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:06:04.595060Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=2 rows=35 cols=154 scrollback_limit_bytes=10000000
+2026-07-27T21:06:04.603652Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=2 pid=32026
+2026-07-27T21:06:04.603923Z  INFO herdr::logging: workspace created event="workspace.create" subsystem="workspace" outcome="ok" workspace_id="w2" pane_id=2
+2026-07-27T21:06:04.603935Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w2"
+2026-07-27T21:06:04.604025Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w2" tab_id="w2:t1"
+2026-07-27T21:06:09.607558Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=2
+2026-07-27T21:06:10.062678Z  INFO herdr::logging: workspace closed event="workspace.close" subsystem="workspace" outcome="ok" workspace_id="w2"
+2026-07-27T21:06:10.064419Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=2 status="ExitStatus { code: 1, signal: None }"
+2026-07-27T21:06:10.087812Z  INFO herdr::pane: pane session terminated pane=2 pid=32026 signal=Hangup
+2026-07-27T21:06:10.088293Z  WARN herdr::app::actions: PaneDied for unknown pane pane=2
+2026-07-27T21:06:15.092309Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:06:32.436654Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=3 rows=35 cols=154 scrollback_limit_bytes=10000000
+2026-07-27T21:06:32.443184Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=3 pid=32270
+2026-07-27T21:06:32.443471Z  INFO herdr::logging: tab renamed event="tab.rename" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:06:32.443632Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:06:35.540368Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:06:36.589600Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:06:37.683056Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:06:42.690995Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:06:54.694530Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:06:59.701625Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:09:57.811398Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:10:02.818841Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:10:14.120498Z  INFO herdr::pane: agent changed pane=1 previous_agent=Some(OpenCode) agent=None pgid=Some(30411)
+2026-07-27T21:10:34.320735Z  INFO herdr::pane: agent changed pane=1 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(32764)
+2026-07-27T21:10:42.167083Z  INFO herdr::server::headless: client resize client_id=2 cols=94 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:12:09.721322Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:12:14.730819Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:14:27.647008Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:14:32.654853Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:33:31.310670Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T21:46:44.252692Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:46:49.260224Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:47:18.066711Z  INFO herdr::pane: agent changed pane=3 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(37386)
+2026-07-27T21:48:15.247065Z  INFO herdr::server::headless: client resize client_id=2 cols=95 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:48:15.349530Z  INFO herdr::server::headless: client resize client_id=2 cols=132 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:48:15.452387Z  INFO herdr::server::headless: client resize client_id=2 cols=142 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:48:16.708587Z  INFO herdr::server::headless: client resize client_id=2 cols=140 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:48:16.811757Z  INFO herdr::server::headless: client resize client_id=2 cols=135 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.072665Z  INFO herdr::server::headless: client resize client_id=2 cols=160 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.176574Z  INFO herdr::server::headless: client resize client_id=2 cols=191 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.484008Z  INFO herdr::server::headless: client resize client_id=2 cols=167 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.586351Z  INFO herdr::server::headless: client resize client_id=2 cols=142 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.687629Z  INFO herdr::server::headless: client resize client_id=2 cols=112 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.788148Z  INFO herdr::server::headless: client resize client_id=2 cols=90 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:32.893244Z  INFO herdr::server::headless: client resize client_id=2 cols=88 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.099679Z  INFO herdr::server::headless: client resize client_id=2 cols=78 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.204268Z  INFO herdr::server::headless: client resize client_id=2 cols=70 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.309362Z  INFO herdr::server::headless: client resize client_id=2 cols=62 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.519607Z  INFO herdr::server::headless: client resize client_id=2 cols=64 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.622639Z  INFO herdr::server::headless: client resize client_id=2 cols=89 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:33.727697Z  INFO herdr::server::headless: client resize client_id=2 cols=95 rows=38 cell_width_px=0 cell_height_px=0
+2026-07-27T21:49:35.981620Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:49:39.197082Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:49:40.011832Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:49:40.378950Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:49:41.771316Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T21:49:42.142004Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:49:47.154786Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:50:12.751854Z  INFO herdr::logging: workspace focused event="workspace.focus" subsystem="workspace" outcome="ok" workspace_id="w1"
+2026-07-27T21:50:12.752815Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:50:12.752983Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t2"
+2026-07-27T21:50:12.763639Z  INFO herdr::logging: pane child exited event="pane.exit" subsystem="pane" outcome="completed" pane_id=3 status="ExitStatus { code: 1, signal: None }"
+2026-07-27T21:50:12.828474Z  INFO herdr::pane: pane session terminated pane=3 pid=32270 signal=Hangup
+2026-07-27T21:50:12.828758Z  WARN herdr::app::actions: PaneDied for unknown pane pane=3
+2026-07-27T21:50:17.834153Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:51:48.507988Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=4 rows=37 cols=91 scrollback_limit_bytes=10000000
+2026-07-27T21:51:48.519101Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=4 pid=38698
+2026-07-27T21:51:48.520119Z  INFO herdr::logging: tab renamed event="tab.rename" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-27T21:51:48.520148Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-27T21:51:53.529709Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T21:51:56.651128Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(38974)
+2026-07-27T22:00:20.437855Z  INFO herdr::logging: spawning pane terminal event="pane.spawn.start" subsystem="pane" outcome="started" pane_id=5 rows=37 cols=91 scrollback_limit_bytes=10000000
+2026-07-27T22:00:20.447717Z  INFO herdr::logging: pane child spawned event="pane.spawned" subsystem="pane" outcome="ok" pane_id=5 pid=40243
+2026-07-27T22:00:20.448600Z  INFO herdr::logging: tab renamed event="tab.rename" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-27T22:00:20.448623Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-27T22:00:25.461738Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T22:01:28.875953Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-27T22:01:33.880319Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T22:03:19.052742Z  INFO herdr::pane: agent changed pane=4 previous_agent=Some(OpenCode) agent=None pgid=Some(38698)
+2026-07-27T22:03:22.089253Z  INFO herdr::pane: agent changed pane=4 previous_agent=None agent=Some(OpenCode) process=opencode pgid=Some(41008)
+2026-07-27T22:03:31.311015Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-27T22:03:36.639907Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-27T22:03:38.195118Z  INFO herdr::server::headless: client resize client_id=2 cols=173 rows=35 cell_width_px=0 cell_height_px=0
+2026-07-27T22:03:41.648115Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T22:08:07.894072Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-27T22:08:12.905270Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-27T22:08:17.087696Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-27T22:08:21.365546Z  INFO herdr::pane: agent changed pane=1 previous_agent=Some(OpenCode) agent=None pgid=Some(30411)
+2026-07-27T22:08:22.093309Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:25:00.839422Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T09:27:15.522813Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:27:17.140798Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:27:21.805321Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-28T09:27:26.812845Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:32:35.800368Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:32:40.811981Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:35:07.321220Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:35:12.331011Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:35:24.032518Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:35:29.041719Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:35:34.810597Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:35:39.816718Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:55:00.773689Z  INFO herdr::logging: checking for updates event="update.check.start" subsystem="update" outcome="started"
+2026-07-28T09:58:09.632829Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-28T09:58:12.031418Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:58:17.044204Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:58:17.493684Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:58:22.502755Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T09:58:40.099195Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:58:41.461985Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:58:45.542152Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:58:46.487650Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:58:47.283657Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:58:47.957270Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:58:48.660087Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T09:58:50.657809Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t4"
+2026-07-28T09:58:55.661695Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T15:06:38.820547Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t1"
+2026-07-28T15:06:39.405918Z  INFO herdr::logging: tab focused event="tab.focus" subsystem="tab" outcome="ok" workspace_id="w1" tab_id="w1:t3"
+2026-07-28T15:06:44.413201Z  INFO herdr::logging: session saved event="persist.save" subsystem="persist" outcome="ok" path=/Users/gabrielvaliente/.config/herdr/session.json workspaces=1
+2026-07-28T15:06:57.115361Z  INFO herdr::pane: agent changed pane=4 previous_agent=Some(OpenCode) agent=None pgid=Some(38698)
