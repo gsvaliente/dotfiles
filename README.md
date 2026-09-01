@@ -3,6 +3,15 @@
 These are just my Dotfiles, mostly Inspired by YouTube videos or other git
 files found online.
 
+## To intall Tmux config on server
+```bash
+curl -fsSL https://raw.githubusercontent.com/gsvaliente/dotfiles/main/tmux/install-server.sh -o install-server.sh
+```
+
+```bash
+bash install-server.sh
+```
+
 ## What is included?
 
 - NeoVim
