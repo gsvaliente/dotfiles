@@ -1,414 +1,106 @@
-command_timeout = 1000
-
-"$schema" = 'https://starship.rs/config-schema.json'
-
-add_newline = false 
-
-format = """
- 🫥\
-$directory\
-${custom.giturl}\
-$git_branch\
-$git_state\
-$git_status\
-$line_break\
-$character
-"""
-
-right_format = """$all"""
-
-# palette = "catppuccin_mocha"
-# palette = "custom"
-
-palette = "rose-pine-moon"
-
-[palettes.rose-pine-moon]
-overlay = '#393552'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ea9a97'
-pine = '#3e8fb0'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-
-# [palettes.catppuccin_mocha]
-# rosewater = "#f5e0dc"
-# flamingo = "#f2cdcd"
-# pink = "#f5c2e7"
-# mauve = "#cba6f7"
-# red = "#f38ba8"
-# maroon = "#eba0ac"
-# peach = "#fab387"
-# yellow = "#f9e2af"
-# green = "#a6e3a1"
-# teal = "#94e2d5"
-# sky = "#89dceb"
-# sapphire = "#74c7ec"
-# blue = "#89b4fa"
-# lavender = "#b4befe"
-# text = "#cdd6f4"
-# subtext1 = "#bac2de"
-# subtext0 = "#a6adc8"
-# overlay2 = "#9399b2"
-# overlay1 = "#7f849c"
-# overlay0 = "#6c7086"
-# surface2 = "#585b70"
-# surface1 = "#45475a"
-# surface0 = "#313244"
-# base = "#1e1e2e"
-# mantle = "#181825"
-# crust = "#11111b"
-
-# [palettes.custom]
-# rosewater = "#ea6962"
-# flamingo = "#ea6962"
-# red = "#ea6962"
-# maroon = "#ea6962"
-# pink = "#d3869b"
-# mauve = "#d3869b"
-# peach = "#e78a4e"
-# yellow = "#d8a657"
-# green = "#a9b665"
-# teal = "#89b482"
-# sky = "#89b482"
-# sapphire = "#89b482"
-# blue = "#7daea3"
-# lavender = "#7daea3"
-# text = "#ebdbb2"
-# subtext1 = "#d5c4a1"
-# subtext0 = "#bdae93"
-# overlay2 = "#a89984"
-# overlay1 = "#928374"
-# overlay0 = "#595959"
-# surface2 = "#4d4d4d"
-# surface1 = "#404040"
-# surface0 = "#292929"
-# base = "#1d2021"
-# mantle = "#191b1c"
-# crust = "#141617"
-
-[os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = " "
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
-
-[username]
-#show_always = true
-#style_user = "bg:surface0 fg:text"
-#style_root = "bg:surface0 fg:text"
-#format = '[ $user ]($style)'
-
-[directory]
-style = "bold pine"
-format = "[ $path ]($style)"
-truncation_length = 4
-# truncation_symbol = "…/"
-truncation_symbol = "../"
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Developer" = "󰲋 "
-
-[os]
-disabled = true
-#style = "bg:surface0 fg:text"
-
-[custom.giturl]
+# # Don't print a new line at the start of the prompt
+ add_newline = false
+# # Pipes ╰─ ╭─
+# # Powerline symbols                                     
+# # Wedges 🭧🭒 🭣🭧🭓
+# # Random noise 🬖🬥🬔🬗
+# # Cool stuff 󰜥   
+#
+# # format = """
+# # $directory $fill $git_branch $cmd_duration
+# #  $character"""
+# format = """
+# $cmd_duration $directory$git_branch$git_status
+#   $character"""
+#
+# [fill]
+# symbol = '-'
+# style = 'fg:#7c6f64'
+#
+# # Replace the "❯" symbol in the prompt with "➜"
+ [character]                            # The name of the module we are configuring is "character"
+ success_symbol = "[ ](bold fg:#7daea3)"
+ error_symbol = "[ ](bold fg:#ea6962)"
+#
+# # Disable the package module, hiding it from the prompt completely
+# [package]
 # disabled = true
-description = "Display symbol for remote Git server"
-command = """
-GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
-if [[ "$GIT_REMOTE" =~ "github" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-elif [[ "$GIT_REMOTE" =~ "git" ]]; then
-    GIT_REMOTE_SYMBOL=" "
-else
-    GIT_REMOTE_SYMBOL=" "
-fi
-echo "$GIT_REMOTE_SYMBOL "
-"""
-when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
-format = "at $output"
-
-[git_branch]
-symbol = "[](overlay) "
-style = "fg:foam bg:overlay"
-format =  '  on [$symbol$branch]($style)[ ](overlay)'
-
-
-[git_status]
-disabled = false
-style = "bg:overlay fg:love"
-format = '([](fg:overlay)([$all_status$ahead_behind](bold $style))[](fg:overlay) )'
-# up_to_date = '[✔︎](bold fg:iris)'
-
-# Working directory status
-# untracked = '[❓](bg:overlay fg:gold)'      # New files to add
-# modified = '[📝](bg:overlay fg:gold)'       # Modified files
-# staged = '[✅](bg:overlay fg:foam)'         # Ready to commit
-# deleted = '[🗑️](bg:overlay fg:rose)'        # Deleted files
-# renamed = '[📛](bg:overlay fg:iris)'        # Renamed files
-# stashed = '[📦](bg:overlay fg:iris)'        # Stashed changes
-#
-# # Remote sync status
-ahead = '[▲ ](bg:overlay fg:red)'          # Commits to push
-behind = '[▼ ](bg:overlay fg:red)'         # Commits to pull
-diverged = '[⇅ ](bg:overlay fg:gold)[⬆️${ahead_count}](bg:overlay fg:foam)[⬇️${behind_count}](bg:overlay fg:rose)'
-
-# Hide when no remote
-# ignore_submodules = false
-
-[bun]
-symbol = "🍙"
-format = '[ $symbol( $version) ]($style)'
-
-[nodejs]
-symbol = ""
-format = '[ $symbol( $version) ]($style)'
-
-[c]
-symbol = " "
-format = '[[ $symbol( $version) ]]($style)'
-
-[rust]
-symbol = ""
-format = '[[ $symbol( $version) ]]($style)'
-
-[golang]
-symbol = ""
-format = '[ $symbol( $version) ]($style)'
-detect_files = ["go.mod"]
-
-[php]
-symbol = ""
-format = '[[ $symbol( $version) ]]($style)'
-
-[java]
-symbol = " "
-format = '[[ $symbol( $version) ]]($style)'
-
-[kotlin]
-symbol = ""
-
-format = '[[ $symbol( $version) ]]($style)'
-
-[haskell]
-symbol = ""
-
-format = '[[ $symbol( $version) ]]($style)'
-
-[python]
-symbol = ""
-
-format = '[ $symbol( $version) ]($style)'
-
-
-[docker_context]
-symbol = ""
-format = '[ $symbol( $context) ]($style)'
-
-
-[time]
-disabled = true
-time_format = "%R"
-style = "bg:rose"
-format = '[[  $time ](fg:overlay bg:overlay)]($style)'
-
-[line_break]
-disabled = true 
-
-[character]
-disabled = false
-success_symbol = '[❯](bold fg:foam)'
-error_symbol = '[❯](bold fg:love)'
-vimcmd_symbol = '[](bold fg:iris)'
-vimcmd_replace_one_symbol = '[](bold fg:iris)'
-vimcmd_replace_symbol = '[](bold fg:iris)'
-vimcmd_visual_symbol = '[](bold fg:iris)'
-# [aws]
-# symbol = "  "
-#
-# [buf]
-# symbol = " "
-#
-# [c]
-# symbol = " "
-#
-# [conda]
-# symbol = " "
-#
-# [crystal]
-# symbol = " "
-#
-# [dart]
-# symbol = " "
-#
-# [directory]
-# read_only = " 󰌾"
-#
-# [docker_context]
-# symbol = " "
-#
-# [elixir]
-# symbol = " "
-#
-# [elm]
-# symbol = " "
-#
-# [fennel]
-# symbol = " "
-#
-# [fossil_branch]
-# symbol = " "
 #
 # [git_branch]
-# symbol = " "
+# style = "bg:#b9c675"
+# symbol = "󰘬"
+# truncation_length = 12
+# truncation_symbol = ""
+# format = " 󰜥 [](bold fg:#b9c675)[$symbol $branch(:$remote_branch)](fg:#1d2021 bg:#b9c675)"
 #
-# [golang]
-# symbol = " "
+# [git_commit]
+# commit_hash_length = 4
+# tag_symbol = " "
 #
-# [guix_shell]
-# symbol = " "
+# [git_state]
+# format = '[\($state( $progress_current of $progress_total)\)]($style) '
+# # cherry_pick = "[🍒 PICKING](bold red)"
 #
-# [haskell]
-# symbol = " "
-#
-# [haxe]
-# symbol = " "
-#
-# [hg_branch]
-# symbol = " "
+# [git_status]
+# disabled = false
+# style = "bg:#b9c675 fg:#1d2021"
+# format = '[$all_status$ahead_behind]($style)[](bold fg:#b9c675)'
+# conflicted = " 🤯"
+# ahead = " 🚀"
+# behind = " 😰"
+# diverged = " 😵"
+# untracked = " 🕵️"
+# stashed = " 📦"
+# modified = " ✏️"
+# staged = '[ ++($count)](fg:#1d2021 bg:#b9c675)'
+# renamed = " 🔖"
+# deleted = " 💀"
 #
 # [hostname]
-# ssh_symbol = " "
+# ssh_only = false
+# format =  "[•$hostname](bg:#b9c675 bold fg:#1d2021)[](bold fg:#b9c675)"
+# trim_at = ".companyname.com"
+# disabled = false
 #
-# [java]
-# symbol = " "
-#
-# [julia]
-# symbol = " "
-#
-# [kotlin]
-# symbol = " "
-#
-# [lua]
-# symbol = " "
+# [line_break]
+# disabled = false
 #
 # [memory_usage]
-# symbol = "󰍛 "
+# disabled = true
+# threshold = -1
+# symbol = " "
+# style = "bold dimmed green"
 #
-# [meson]
-# symbol = "󰔷 "
+# [time]
+# disabled = true
+# format = '🕙[\[ $time \]]($style) '
+# time_format = "%T"
 #
-# [nim]
-# symbol = "󰆥 "
+# [username]
+# style_user = "bold bg:#b9c675 fg:#1d2021"
+# style_root = "red bold"
+# format = "[](bold fg:#b9c675)[$user]($style)"
+# disabled = false
+# show_always = true
 #
-# [nix_shell]
-# symbol = " "
+# [directory]
+# home_symbol = " "
+# read_only = "  "
+# style = "bg:#3c3836 fg:#d4be98"
+# truncation_length = 2
+# truncation_symbol = ".../"
+# format = '[](bold fg:#3c3836)[󰉋 → $path]($style)[](bold fg:#3c3836)'
 #
-# [nodejs]
-# symbol = " "
 #
-# [ocaml]
-# symbol = " "
+# [directory.substitutions]
+# "Desktop" = "  "
+# "Documents" = "  "
+# "Downloads" = "  "
+# "Music" = " 󰎈 "
+# "Pictures" = "  "
+# "Videos" = "  "
+# "GitHub" = " 󰊤 "
 #
-# [os.symbols]
-# Alpaquita = " "
-# Alpine = " "
-# AlmaLinux = " "
-# Amazon = " "
-# Android = " "
-# Arch = " "
-# Artix = " "
-# CentOS = " "
-# Debian = " "
-# DragonFly = " "
-# Emscripten = " "
-# EndeavourOS = " "
-# Fedora = " "
-# FreeBSD = " "
-# Garuda = "󰛓 "
-# Gentoo = " "
-# HardenedBSD = "󰞌 "
-# Illumos = "󰈸 "
-# Kali = " "
-# Linux = " "
-# Mabox = " "
-# Macos = " "
-# Manjaro = " "
-# Mariner = " "
-# MidnightBSD = " "
-# Mint = " "
-# NetBSD = " "
-# NixOS = " "
-# OpenBSD = "󰈺 "
-# openSUSE = " "
-# OracleLinux = "󰌷 "
-# Pop = " "
-# Raspbian = " "
-# Redhat = " "
-# RedHatEnterprise = " "
-# RockyLinux = " "
-# Redox = "󰀘 "
-# Solus = "󰠳 "
-# SUSE = " "
-# Ubuntu = " "
-# Unknown = " "
-# Void = " "
-# Windows = "󰍲 "
-#
-# [package]
-# symbol = "󰏗 "
-#
-# [perl]
-# symbol = " "
-#
-# [php]
-# symbol = " "
-#
-# [pijul_channel]
-# symbol = " "
-#
-# [python]
-# symbol = " "
-#
-# [rlang]
-# symbol = "󰟔 "
-#
-# [ruby]
-# symbol = " "
-#
-# [rust]
-# symbol = " "
-#
-# [scala]
-# symbol = " "
-#
-# [swift]
-# symbol = " "
-#
-# [zig]
-# symbol = " "
+# [cmd_duration]
+# min_time = 0
+# format = '[](bold fg:#b9c675)[GSV 󰪢 $duration](bold bg:#b9c675 fg:#1d2021)[](bold fg:#b9c675)'

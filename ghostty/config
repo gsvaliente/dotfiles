@@ -1,27 +1,26 @@
 
-background-opacity = 0.95
+background-opacity = 0.90
 background-blur-radius = 50
 
 # font-family = Cascadia Code
 # font-family = IoskeleyMono Nerd Font
-font-family = IoskeleyMonoTerm Nerd Font
+# font-family = DankMono Nerd Font
+# font-family = IoskeleyMonoTerm Nerd Font
 
 # font-style = Medium
-# font-family-italic = Ioskeley Mono Medium
-font-style = Regular
+# font-family-italic = IoskeleyMonoTerm Nerd Font
+# font-style = Regular
 
+# theme = "matte-black"
 # theme = "dark: kanso-ink, light: kanso-pearl"
-# theme = GruvboxDark
-# theme = Catppuccin Frappe
- # theme = Catppuccin Latte
-theme = Rose Pine
+theme = Gruvbox Material Dark
 
 macos-icon = xray
 
-font-size = 15.7
-# font-size = 17.5
+ font-size = 16.5
+ font-size = 17
 
-adjust-cell-height = 20%
+adjust-cell-height = 25%
 
 # title = " "
 
@@ -56,8 +55,6 @@ keybind = cmd+s>comma=move_tab:-1
 keybind = cmd+s>period=move_tab:1
 
 # split
-keybind = cmd+s>\=new_split:right
-keybind = cmd+s>-=new_split:down
 
 keybind = cmd+s>j=goto_split:bottom
 keybind = cmd+s>k=goto_split:top
@@ -69,3 +66,8 @@ keybind = cmd+s>e=equalize_splits
 
 # other
 copy-on-select = clipboard
+clipboard-write = allow
+clipboard-read = allow
+
+
+shell-integration-features = ssh-env,ssh-terminfo

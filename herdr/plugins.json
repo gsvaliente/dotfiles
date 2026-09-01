@@ -1,0 +1,228 @@
+[
+  {
+    "plugin_id": "herdr-sidebar",
+    "name": "herdr-sidebar",
+    "version": "0.10.0",
+    "min_herdr_version": "0.8.0",
+    "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
+    "manifest_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a/plugins/herdr-sidebar/herdr-plugin.toml",
+    "plugin_root": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a/plugins/herdr-sidebar",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/fetch-or-build.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-or-build.ps1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-git",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-git.sh"
+        ]
+      },
+      {
+        "id": "open-git-windows",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-Command",
+          "$u=New-Object System.Text.UTF8Encoding($false); [Console]::OutputEncoding=$u; $OutputEncoding=$u; $b=$env:HERDR_BIN_PATH; if(-not $b){$b='herdr'}; $p=((& $b plugin list --json|ConvertFrom-Json).result.plugins|?{$_.plugin_id -eq 'herdr-sidebar'}).plugin_root; if($p -and $p.StartsWith('\\\\?\\')){$p=$p.Substring(4)}; & (Join-Path (Join-Path $p 'scripts') 'open-git.ps1')"
+        ]
+      },
+      {
+        "id": "open-sidebar",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/open-sidebar.sh"
+        ]
+      },
+      {
+        "id": "open-sidebar-windows",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--toggle"
+        ]
+      },
+      {
+        "id": "redeploy",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/redeploy.sh"
+        ]
+      },
+      {
+        "id": "redeploy-windows",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/redeploy.ps1"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/ensure-sidebar.sh"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/ensure-sidebar.sh"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/ensure-sidebar.sh"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/ensure-sidebar.sh"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "sidebar",
+        "title": "Sidebar",
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-sidebar"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "alexarthurs",
+      "repo": "herdr-sidebar",
+      "subdir": "plugins/herdr-sidebar",
+      "resolved_commit": "13ebde8d631494f1273d8c5e3503a755047c1267",
+      "managed_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a",
+      "installed_unix_ms": 1787835648253
+    }
+  }
+]

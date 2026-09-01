@@ -2,18 +2,16 @@
   "version": 3,
   "workspaces": [
     {
-      "id": "w1",
-      "custom_name": null,
-      "identity_cwd": "/Users/gabrielvaliente/ZenNotes/Cloud",
+      "id": "w9",
+      "custom_name": "Blog",
+      "identity_cwd": "/Users/gabrielvaliente/personalProjects/blog-aws",
       "public_pane_numbers": {
-        "1": 1,
-        "5": 4,
-        "4": 3
+        "4": 31,
+        "5": 39
       },
-      "next_public_pane_number": 5,
+      "next_public_pane_number": 41,
       "public_tab_numbers": [
         1,
-        3,
         4
       ],
       "next_public_tab_number": 5,
@@ -21,25 +19,11 @@
         {
           "custom_name": null,
           "layout": {
-            "Pane": 1
-          },
-          "panes": {
-            "1": {
-              "cwd": "/Users/gabrielvaliente/ZenNotes/Cloud"
-            }
-          },
-          "zoomed": false,
-          "focused": 1,
-          "root_pane": 1
-        },
-        {
-          "custom_name": "Research",
-          "layout": {
             "Pane": 4
           },
           "panes": {
             "4": {
-              "cwd": "/Users/gabrielvaliente/ZenNotes/Cloud"
+              "cwd": "/Users/gabrielvaliente/personalProjects/blog-aws"
             }
           },
           "zoomed": false,
@@ -47,13 +31,13 @@
           "root_pane": 4
         },
         {
-          "custom_name": "Terminal",
+          "custom_name": "server",
           "layout": {
             "Pane": 5
           },
           "panes": {
             "5": {
-              "cwd": "/Users/gabrielvaliente"
+              "cwd": "/Users/gabrielvaliente/personalProjects/blog-aws"
             }
           },
           "zoomed": false,
@@ -61,12 +45,58 @@
           "root_pane": 5
         }
       ],
-      "active_tab": 1
+      "active_tab": 0
+    },
+    {
+      "id": "wA",
+      "custom_name": null,
+      "identity_cwd": "/Users/gabrielvaliente/.config/herdr",
+      "public_pane_numbers": {
+        "8": 3,
+        "6": 1
+      },
+      "next_public_pane_number": 4,
+      "public_tab_numbers": [
+        1,
+        2
+      ],
+      "next_public_tab_number": 3,
+      "tabs": [
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 6
+          },
+          "panes": {
+            "6": {
+              "cwd": "/Users/gabrielvaliente/.config/herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 6,
+          "root_pane": 6
+        },
+        {
+          "custom_name": null,
+          "layout": {
+            "Pane": 8
+          },
+          "panes": {
+            "8": {
+              "cwd": "/Users/gabrielvaliente/.config/herdr"
+            }
+          },
+          "zoomed": false,
+          "focused": 8,
+          "root_pane": 8
+        }
+      ],
+      "active_tab": 0
     }
   ],
-  "active": 0,
-  "selected": 0,
-  "sidebar_width": 26,
+  "active": 1,
+  "selected": 1,
+  "sidebar_width": 24,
   "sidebar_section_split": 0.5,
   "collapsed_space_keys": []
 }
