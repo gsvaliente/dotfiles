@@ -1,0 +1,4 @@
+session.json
+*.sock
+*.log
+**/target/

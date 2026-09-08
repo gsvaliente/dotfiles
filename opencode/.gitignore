@@ -1,0 +1,6 @@
+node_modules
+service.json
+*.bak
+herdr-tui-session.js
+plugins/herdr-agent-state.js
+plugins/supacode-presence.js
