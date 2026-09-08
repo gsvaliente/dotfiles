@@ -161,7 +161,7 @@
   {
     "plugin_id": "herdr-sidebar",
     "name": "herdr-sidebar",
-    "version": "0.10.0",
+    "version": "0.11.0",
     "min_herdr_version": "0.8.0",
     "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
     "manifest_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a/plugins/herdr-sidebar/herdr-plugin.toml",
@@ -379,9 +379,9 @@
       "owner": "alexarthurs",
       "repo": "herdr-sidebar",
       "subdir": "plugins/herdr-sidebar",
-      "resolved_commit": "13ebde8d631494f1273d8c5e3503a755047c1267",
+      "resolved_commit": "4faeea73503bcfb7e5ba72ef0c683649f64f74e5",
       "managed_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a",
-      "installed_unix_ms": 1787835648253
+      "installed_unix_ms": 1788894355591
     }
   }
 ]
