@@ -15,13 +15,13 @@ auto_switch = false
 show_agent_labels_on_pane_borders = true
 status_indicators = "dots"
 
-[ui.sidebar.spaces]
+[ui.sidebar.spaces]          # sidebar mode → git status under each space
 rows = [
-  ["state_icon", { token = "workspace", bold = true }],
-  [
-    { token = "branch", dim = true },
-    "git_status",
-  ],
+  ["state_icon", "workspace"],
+  ["branch", "git_status",
+    { token = "$git_clean",    fg = "#a6e3a1" },   # fully clean ✓ — green
+    { token = "$git_dirty",    fg = "#f9e2af" },   # +staged ~modified ?untracked — yellow
+    { token = "$git_conflict", fg = "#f38ba8" }],  # !conflicts — red
 ]
 
 [[keys.command]]
@@ -30,3 +30,14 @@ type = "shell"
 command = "herdr plugin action invoke open-sidebar --plugin herdr-sidebar"
 description = "toggle herdr-sidebar"
 
+[[keys.command]]
+key = "prefix+,"
+type = "plugin_action"
+command = "herdr-last.toggle-workspace"
+description = "Toggle to last workspace"
+
+[[keys.command]]
+key = "prefix+."
+type = "plugin_action"
+command = "herdr-last.toggle-tab"
+description = "Toggle to last tab"

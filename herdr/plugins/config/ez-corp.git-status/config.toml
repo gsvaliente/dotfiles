@@ -1,0 +1,4 @@
+# Show git status in the Spaces pane, not the Agents pane.
+mode = "sidebar"
+interval_seconds = 5
+clean_checkmark = true

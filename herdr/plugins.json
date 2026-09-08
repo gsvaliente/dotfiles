@@ -1,5 +1,164 @@
 [
   {
+    "plugin_id": "ez-corp.git-status",
+    "name": "Git Status",
+    "version": "1.5.0",
+    "min_herdr_version": "0.7.5",
+    "description": "Git working-tree status (staged/modified/untracked, ✓ when clean) per space.",
+    "manifest_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/ez-corp.git-status-ea1130cc59c6/herdr-plugin.toml",
+    "plugin_root": "/Users/gabrielvaliente/.config/herdr/plugins/github/ez-corp.git-status-ea1130cc59c6",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "command": [
+          "cargo",
+          "build",
+          "--release"
+        ]
+      }
+    ],
+    "startup": [
+      {
+        "command": [
+          "./target/release/git-status",
+          "--restore"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "report",
+        "title": "Git status report",
+        "contexts": [
+          "workspace"
+        ],
+        "command": [
+          "./target/release/git-status",
+          "--once"
+        ]
+      },
+      {
+        "id": "status-disable",
+        "title": "Disable git status updater",
+        "command": [
+          "./target/release/git-status",
+          "--disable"
+        ]
+      },
+      {
+        "id": "status-enable",
+        "title": "Enable git status updater",
+        "command": [
+          "./target/release/git-status",
+          "--enable"
+        ]
+      },
+      {
+        "id": "status-toggle",
+        "title": "Toggle git status updater",
+        "command": [
+          "./target/release/git-status",
+          "--toggle"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "dashboard",
+        "title": "Git status",
+        "placement": "overlay",
+        "command": [
+          "./target/release/git-status",
+          "--interval",
+          "3"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "ezcorp-org",
+      "repo": "herdr-git-status",
+      "resolved_commit": "f144c8dac2860e344b6b379d2bcfee229dcf10ad",
+      "managed_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/ez-corp.git-status-ea1130cc59c6",
+      "installed_unix_ms": 1788876038181
+    }
+  },
+  {
+    "plugin_id": "herdr-last",
+    "name": "herdr-last",
+    "version": "0.1.0",
+    "min_herdr_version": "0.7.0",
+    "description": "Plugin to toggle back to the previously active tab or workspace in Herdr",
+    "manifest_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-last-f12265159349/herdr-plugin.toml",
+    "plugin_root": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-last-f12265159349",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/install.sh"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "toggle-tab",
+        "title": "Toggle Last Tab",
+        "command": [
+          "./bin/herdr-last",
+          "toggle-tab"
+        ]
+      },
+      {
+        "id": "toggle-workspace",
+        "title": "Toggle Last Workspace",
+        "command": [
+          "./bin/herdr-last",
+          "toggle-workspace"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "tab.focused",
+        "command": [
+          "./bin/herdr-last",
+          "event",
+          "tab.focused"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "command": [
+          "./bin/herdr-last",
+          "event",
+          "workspace.focused"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "lmilojevicc",
+      "repo": "herdr-last",
+      "resolved_commit": "444c12f51fa8f712588cd1481dcd5459f658eac9",
+      "managed_path": "/Users/gabrielvaliente/.config/herdr/plugins/github/herdr-last-f12265159349",
+      "installed_unix_ms": 1788873715951
+    }
+  },
+  {
     "plugin_id": "herdr-sidebar",
     "name": "herdr-sidebar",
     "version": "0.10.0",
