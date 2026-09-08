@@ -134,12 +134,12 @@
       "custom_name": null,
       "identity_cwd": "/Users/gabrielvaliente/.config/nvim",
       "public_pane_numbers": {
-        "5": 1,
         "7": 3,
+        "5": 1,
         "9": 7,
         "6": 2
       },
-      "next_public_pane_number": 12,
+      "next_public_pane_number": 14,
       "public_tab_numbers": [
         1,
         2,
@@ -189,7 +189,7 @@
           },
           "panes": {
             "7": {
-              "cwd": "/Users/gabrielvaliente/.config/herdr/plugins/config/ez-corp.git-status"
+              "cwd": "/Users/gabrielvaliente/.config/herdr"
             }
           },
           "zoomed": false,
