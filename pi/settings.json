@@ -1,0 +1,29 @@
+{
+  "lastChangelogVersion": "0.85.1",
+  "theme": "dark",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.6-luna",
+  "defaultThinkingLevel": "minimal",
+  "packages": [
+    "npm:@narumitw/pi-plan-mode",
+    "npm:pi-web-access",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@tintinweb/pi-subagents",
+    "npm:@alexgorbatchev/pi-cmux-notify",
+    "npm:pi-session-manager"
+  ],
+  "enabledModels": [
+    "openai-codex/gpt-5.6-luna",
+    "openrouter/openai/gpt-5.6-luna",
+    "openrouter/qwen/qwen3.7-flash",
+    "openrouter/deepseek/deepseek-v4-flash-0731"
+  ],
+  "@alexgorbatchev/pi-cmux-notify": {
+    "level": "all",
+    "thresholdMs": 15000,
+    "debounceMs": 3000,
+    "title": "Pi"
+  },
+  "tuiMode": "fullscreen",
+  "fullscreenExitOutput": "transcript"
+}

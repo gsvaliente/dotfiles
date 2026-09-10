@@ -1,0 +1,5 @@
+{
+  "tui.input.newLine": "shift+enter",
+  "tui.altScreen.lineUp": "ctrl+k",
+  "tui.altScreen.lineDown": "ctrl+j"
+}

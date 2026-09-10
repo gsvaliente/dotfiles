@@ -28,3 +28,11 @@ mole
 /herdr/herdr-server.log
 /herdr/session.json
 /herdr/*.sock
+pi/auth.json
+pi/models-store.json
+pi/sessions/
+pi/missions/
+pi/run-history.jsonl
+pi/trust.json
+pi/npm/
+pi/extensions/*.lock

@@ -2,14 +2,14 @@
 background-opacity = 0.90
 background-blur-radius = 50
 
-# font-family = Cascadia Code
-font-family = Maple Mono NF
-# font-family = IoskeleyMono Nerd Font
-# font-family = DankMono Nerd Font
+# font-family = Maple Mono NF
+# font-family = GeistMono Nerd Font
+# font-family = DankMono Nerd Font Mono
 # font-family = IoskeleyMonoTerm Nerd Font
 
+ font-feature = zero
+
 # font-style = Medium
-# font-family-italic = IoskeleyMonoTerm Nerd Font
 # font-style = Regular
 
 # theme = "matte-black"
@@ -19,8 +19,8 @@ theme = TokyoNight
 
 macos-icon = xray
 
-font-size = 15.5
-# font-size = 17
+font-size = 16
+# font-size = 17.5
 
 adjust-cell-height = 35%
 
