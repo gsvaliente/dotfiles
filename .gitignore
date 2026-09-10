@@ -36,3 +36,4 @@ pi/run-history.jsonl
 pi/trust.json
 pi/npm/
 pi/extensions/*.lock
+/gh
