@@ -61,8 +61,10 @@ export default function (pi: ExtensionAPI) {
   let cwd = process.cwd()
   let cached: DiffStats = { added: 0, removed: 0, files: 0, dirty: false }
   let lastRead = 0
+  let activeTui: { requestRender(): void } | undefined
 
-  const refresh = (tui: { requestRender(): void }) => {
+  const refresh = (tui: { requestRender(): void }, force = false) => {
+    if (force) lastRead = 0
     const now = Date.now()
     if (now - lastRead < REFRESH_MS) return
     lastRead = now
@@ -73,9 +75,9 @@ export default function (pi: ExtensionAPI) {
   pi.on("session_start", (_event, ctx) => {
     cwd = (ctx as typeof ctx & { cwd?: string }).cwd || process.cwd()
     ctx.ui.setFooter((tui, theme, footerData) => {
+      activeTui = tui
       const stopBranch = footerData.onBranchChange(() => {
-        cached = gitStats(cwd)
-        tui.requestRender()
+        refresh(tui, true)
       })
 
       return {
@@ -192,6 +194,14 @@ export default function (pi: ExtensionAPI) {
         },
       }
     })
+  })
+
+  // Tool calls are the usual way pi changes files. A footer render is not
+  // guaranteed immediately after a tool result, so refresh the cache and
+  // explicitly invalidate the footer when a tool finishes.
+  pi.on("tool_result", () => {
+    if (!activeTui) return
+    refresh(activeTui, true)
   })
 
   pi.on("agent_start", () => {
